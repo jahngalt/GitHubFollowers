@@ -15,6 +15,7 @@ class MainTabBar: UITabBarController {
         
         setupViewControllers()
         settingTabBar()
+        configureNavigationBar()
         // Do any additional setup after loading the view.
     }
     
@@ -41,5 +42,9 @@ class MainTabBar: UITabBarController {
     fileprivate func settingTabBar() {
         UITabBar.appearance().tintColor = .systemGreen
     }
-
+    
+    
+    fileprivate func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
+    }
 }
