@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED008BAD24D9E3D9002DDE93 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED008BAC24D9E3D9002DDE93 /* UIViewController+Ext.swift */; };
+		ED0157A824E06E510024EAD9 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0157A724E06E510024EAD9 /* Follower.swift */; };
+		ED0157AA24E06F7C0024EAD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0157A924E06F7C0024EAD9 /* User.swift */; };
 		ED04825324C9F6DC00C58BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04825224C9F6DC00C58BD8 /* AppDelegate.swift */; };
 		ED04825524C9F6DC00C58BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04825424C9F6DC00C58BD8 /* SceneDelegate.swift */; };
 		ED04825C24C9F6DE00C58BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED04825B24C9F6DE00C58BD8 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		ED008BAC24D9E3D9002DDE93 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		ED0157A724E06E510024EAD9 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		ED0157A924E06F7C0024EAD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ED04824F24C9F6DB00C58BD8 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED04825224C9F6DC00C58BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED04825424C9F6DC00C58BD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED0157A424E068090024EAD9 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE00CB24D81089000E3123 /* GFButton.swift */,
+				EDDE00CD24D82CAA000E3123 /* GFTextField.swift */,
+				EDC2728B24D95C7A00CF8AB5 /* GFTitleLabel.swift */,
+				EDC2728D24D95FEF00CF8AB5 /* GFBodyLabel.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		ED0157A524E0682B0024EAD9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED04825B24C9F6DE00C58BD8 /* Assets.xcassets */,
+				ED04825D24C9F6DE00C58BD8 /* LaunchScreen.storyboard */,
+				ED04826024C9F6DE00C58BD8 /* Info.plist */,
+				ED04825224C9F6DC00C58BD8 /* AppDelegate.swift */,
+				ED04825424C9F6DC00C58BD8 /* SceneDelegate.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		ED0157A624E06DBE0024EAD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED0157A724E06E510024EAD9 /* Follower.swift */,
+				ED0157A924E06F7C0024EAD9 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ED04824624C9F6DB00C58BD8 = {
 			isa = PBXGroup;
 			children = (
@@ -72,18 +108,11 @@
 		ED04825124C9F6DB00C58BD8 /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				ED0157A624E06DBE0024EAD9 /* Model */,
+				ED2B38C524DAF4D200E76DA1 /* Extensions */,
+				ED0157A424E068090024EAD9 /* Custom Views */,
 				ED2B38C424DAEA4200E76DA1 /* Screens */,
-				ED04825224C9F6DC00C58BD8 /* AppDelegate.swift */,
-				ED04825424C9F6DC00C58BD8 /* SceneDelegate.swift */,
-				ED04825B24C9F6DE00C58BD8 /* Assets.xcassets */,
-				ED04825D24C9F6DE00C58BD8 /* LaunchScreen.storyboard */,
-				ED04826024C9F6DE00C58BD8 /* Info.plist */,
-				EDDE00CB24D81089000E3123 /* GFButton.swift */,
-				EDDE00CD24D82CAA000E3123 /* GFTextField.swift */,
-				EDC2728B24D95C7A00CF8AB5 /* GFTitleLabel.swift */,
-				EDC2728D24D95FEF00CF8AB5 /* GFBodyLabel.swift */,
-				EDC2728F24D974BC00CF8AB5 /* GFAlertController.swift */,
-				ED008BAC24D9E3D9002DDE93 /* UIViewController+Ext.swift */,
+				ED0157A524E0682B0024EAD9 /* Support Files */,
 			);
 			path = GitHubFollowers;
 			sourceTree = "<group>";
@@ -91,12 +120,21 @@
 		ED2B38C424DAEA4200E76DA1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				EDC2728F24D974BC00CF8AB5 /* GFAlertController.swift */,
 				ED58F16924D7E5CF002C1DA0 /* SearchVC.swift */,
 				ED58F16B24D7E62A002C1DA0 /* FavoritesListVC.swift */,
 				EDC2728924D92A7000CF8AB5 /* FollowerListViewController.swift */,
 				ED58F16F24D7EFD6002C1DA0 /* MainTabBar.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		ED2B38C524DAF4D200E76DA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED008BAC24D9E3D9002DDE93 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +213,9 @@
 				ED58F16A24D7E5CF002C1DA0 /* SearchVC.swift in Sources */,
 				EDDE00CC24D81089000E3123 /* GFButton.swift in Sources */,
 				ED04825324C9F6DC00C58BD8 /* AppDelegate.swift in Sources */,
+				ED0157AA24E06F7C0024EAD9 /* User.swift in Sources */,
 				ED58F17024D7EFD6002C1DA0 /* MainTabBar.swift in Sources */,
+				ED0157A824E06E510024EAD9 /* Follower.swift in Sources */,
 				EDC2729024D974BC00CF8AB5 /* GFAlertController.swift in Sources */,
 				EDC2728C24D95C7A00CF8AB5 /* GFTitleLabel.swift in Sources */,
 				ED04825524C9F6DC00C58BD8 /* SceneDelegate.swift in Sources */,
@@ -318,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYNZRZ47N3;
-				INFOPLIST_FILE = GitHubFollowers/Info.plist;
+				INFOPLIST_FILE = "GitHubFollowers/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYNZRZ47N3;
-				INFOPLIST_FILE = GitHubFollowers/Info.plist;
+				INFOPLIST_FILE = "GitHubFollowers/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
