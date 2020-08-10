@@ -10,6 +10,8 @@
 		ED008BAD24D9E3D9002DDE93 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED008BAC24D9E3D9002DDE93 /* UIViewController+Ext.swift */; };
 		ED0157A824E06E510024EAD9 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0157A724E06E510024EAD9 /* Follower.swift */; };
 		ED0157AA24E06F7C0024EAD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0157A924E06F7C0024EAD9 /* User.swift */; };
+		ED0157AD24E076400024EAD9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0157AC24E076400024EAD9 /* NetworkManager.swift */; };
+		ED0157B024E101780024EAD9 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0157AF24E101780024EAD9 /* ErrorMessage.swift */; };
 		ED04825324C9F6DC00C58BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04825224C9F6DC00C58BD8 /* AppDelegate.swift */; };
 		ED04825524C9F6DC00C58BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04825424C9F6DC00C58BD8 /* SceneDelegate.swift */; };
 		ED04825C24C9F6DE00C58BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED04825B24C9F6DE00C58BD8 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		ED008BAC24D9E3D9002DDE93 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		ED0157A724E06E510024EAD9 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		ED0157A924E06F7C0024EAD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ED0157AC24E076400024EAD9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ED0157AF24E101780024EAD9 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		ED04824F24C9F6DB00C58BD8 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED04825224C9F6DC00C58BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED04825424C9F6DC00C58BD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED0157AB24E0762B0024EAD9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				ED0157AC24E076400024EAD9 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		ED0157AE24E101650024EAD9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED0157AF24E101780024EAD9 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		ED04824624C9F6DB00C58BD8 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +128,8 @@
 		ED04825124C9F6DB00C58BD8 /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				ED0157AE24E101650024EAD9 /* Utilities */,
+				ED0157AB24E0762B0024EAD9 /* Managers */,
 				ED0157A624E06DBE0024EAD9 /* Model */,
 				ED2B38C524DAF4D200E76DA1 /* Extensions */,
 				ED0157A424E068090024EAD9 /* Custom Views */,
@@ -219,6 +241,8 @@
 				EDC2729024D974BC00CF8AB5 /* GFAlertController.swift in Sources */,
 				EDC2728C24D95C7A00CF8AB5 /* GFTitleLabel.swift in Sources */,
 				ED04825524C9F6DC00C58BD8 /* SceneDelegate.swift in Sources */,
+				ED0157B024E101780024EAD9 /* ErrorMessage.swift in Sources */,
+				ED0157AD24E076400024EAD9 /* NetworkManager.swift in Sources */,
 				EDDE00CE24D82CAA000E3123 /* GFTextField.swift in Sources */,
 				EDC2728E24D95FEF00CF8AB5 /* GFBodyLabel.swift in Sources */,
 			);
