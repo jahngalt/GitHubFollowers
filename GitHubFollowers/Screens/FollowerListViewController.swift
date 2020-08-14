@@ -17,17 +17,18 @@ class FollowerListViewController: UIViewController {
     }
     
     var username: String!
+    var page: Int = 1
     var followers: [Follower] = []
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
-    
+    var hasMoreFollowers =  true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        getFollowers()
+        getFollowers(username: username, page: page)
         configureDataSource()
     }
     
@@ -47,19 +48,33 @@ class FollowerListViewController: UIViewController {
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.cellId)
     }
     
-    func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+    func getFollowers(username: String, page: Int) {
+        
+        showLoadingView()
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             
             guard let self = self else { return }
             
+            self.dismissLoadingView()
             switch result {
-                
             case .success(let followers):
-                self.followers = followers
+                if followers.count < 50 {
+                    self.hasMoreFollowers = false
+                }
+                self.followers.append(contentsOf: followers)
+                
+                //check if empty -> show empty View controller
+                if self.followers.isEmpty {
+                    let message = "This user doesn't have any followers. Go follow them 😈"
+                    
+                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+                    return
+                }
                 self.updateData()
                 
             case .failure(let error):
@@ -86,6 +101,23 @@ class FollowerListViewController: UIViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
 
+        }
+    }
+}
+
+
+extension FollowerListViewController: UICollectionViewDelegate {
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHight - height {
+            guard hasMoreFollowers else { return }
+            page += 1
+            getFollowers(username: username, page: page)
+            
         }
     }
 }

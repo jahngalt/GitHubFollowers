@@ -6,15 +6,16 @@
 //  Copyright © 2020 Oleg Kudimov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 class NetworkManager {
     
     static let shared = NetworkManager()
     
-    let baseURL = "https://api.github.com/users/"
-    let perPage = 50
+    private let baseURL = "https://api.github.com/users/"
+    private let perPage = 50
+    let cache = NSCache<NSString, UIImage>()
     
     
     
